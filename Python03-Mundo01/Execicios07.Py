@@ -1,0 +1,5 @@
+frase = str(input("Escreva uma frase: "))
+cont = frase.lower().count('a')
+pri = frase.lower().find('a')
+ult = frase.lower().rfind('a') 
+print(f"\n Na frase tem {cont} letras 'A'\n A primeira Letra 'A' se encontra na posição {pri}\n A Ultima posição se encontra {ult}")
