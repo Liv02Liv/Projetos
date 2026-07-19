@@ -58,3 +58,21 @@ df[["GM", "Pts"]].corr().style.hide(axis="index")
 
 print("Melhor saldo de gols")
 df.nlargest(10, "SG")[["Equipes", "SG"]].style.hide(axis="index")
+
+#%%
+
+print("🏆 Desempenho")
+
+#%%
+
+df["Aproveitamento (%)"] = (df["Pts"] / (df["PJ"] * 3)) * 100
+
+df["GM/Jogo"] = df["GM"] / df["PJ"]
+
+df["GC/Jogo"] = df["GC"] / df["PJ"]
+
+df["Pts/Jogo"] = df["Pts"] / df["PJ"]
+
+df["SG/Jogo"] = df["SG"] / df["PJ"]
+
+df 
