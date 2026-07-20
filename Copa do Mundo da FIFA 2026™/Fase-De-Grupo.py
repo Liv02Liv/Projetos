@@ -135,3 +135,27 @@ df["DER"].mean()
 
 print("Desvio padrão dos gols marcados")
 df["GM"].std()
+
+#%%
+
+print("6. Rankings")
+
+#%%
+
+print("Top 10 ataques")
+df.nlargest(10, "GM")[["Equipes", "GM"]].style.hide(axis="index")
+
+#%%
+
+print("Top 10 defesas")
+df.nsmallest(10, "GC")[["Equipes", "GC"]].style.hide(axis="index")
+
+#%%
+
+print("Top 10 saldos")
+df.nlargest(10, "SG")[["Equipes", "SG"]].style.hide(axis="index")
+
+#%%
+
+print("Top 10 vitórias")
+df.nlargest(10, "VIT")[["Equipes", "VIT"]].style.hide(axis="index")
