@@ -7,7 +7,7 @@ df
 
 #%%
 
-print("📊Desempenho das equipes")
+print("1. Desempenho das equipes")
 
 #%%
 
@@ -36,7 +36,7 @@ df.nlargest(10, "DER")[["Equipes", "DER"]].style.hide(axis="index")
 
 #%%
 
-print("⚽ Ataque e 🛡️ Defesa")
+print("2. Ataque e defesa")
 
 #%%
 
@@ -61,7 +61,7 @@ df.nlargest(10, "SG")[["Equipes", "SG"]].style.hide(axis="index")
 
 #%%
 
-print("🏆 Desempenho")
+print("3. Eficiência")
 
 #%%
 
@@ -76,3 +76,23 @@ df["Pts/Jogo"] = df["Pts"] / df["PJ"]
 df["SG/Jogo"] = df["SG"] / df["PJ"]
 
 df 
+
+#%%
+
+print("4. Comparações")
+
+#%%
+
+print("Quem venceu mais também marcou mais gols?")
+df.sort_values(["VIT", "GM"], ascending=False)[["Equipes", "VIT", "GM"]].style.hide(axis="index")
+
+#%%
+
+print("Correlação entre saldo de gols e pontos")
+df[["SG", "Pts"]].corr().style.hide(axis="index")
+
+#%%
+
+print("Média de gols das 10 melhores equipes")
+top10 = df.nlargest(10, "Pts")
+top10["GM"].mean()
