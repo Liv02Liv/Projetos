@@ -96,3 +96,42 @@ df[["SG", "Pts"]].corr().style.hide(axis="index")
 print("Média de gols das 10 melhores equipes")
 top10 = df.nlargest(10, "Pts")
 top10["GM"].mean()
+
+#%%
+
+print("5. Estatísticas gerais")
+
+#%%
+
+print("Total de gols")
+df["GM"].sum()
+
+#%%
+
+print("Média de gols")
+df["GM"].mean()
+
+#%%
+
+print("Média de pontos")
+df["Pts"].mean()
+
+#%%
+
+print("Média de vitórias")
+df["VIT"].mean()
+
+#%%
+
+print("Média de empates")
+df["E"].mean()
+
+#%%
+
+print("Média de derrotas")
+df["DER"].mean()
+
+#%%
+
+print("Desvio padrão dos gols marcados")
+df["GM"].std()
