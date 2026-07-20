@@ -95,7 +95,8 @@ df[["SG", "Pts"]].corr().style.hide(axis="index")
 
 print("Média de gols das 10 melhores equipes")
 top10 = df.nlargest(10, "Pts")
-top10["GM"].mean()
+melhores = top10["GM"].mean()
+print(melhores)
 
 #%%
 
@@ -104,32 +105,37 @@ print("5. Estatísticas gerais")
 #%%
 
 print("Total de gols")
-df["GM"].sum()
+gols = df["GM"].sum()
+print(gols)
 
 #%%
 
 print("Média de gols")
-df["GM"].mean()
+Mgols = df["GM"].mean()
+print(Mgols)
 
 #%%
 
 print("Média de pontos")
-df["Pts"].mean()
-
+pontos = df["Pts"].mean()
+print(pontos)
 #%%
 
 print("Média de vitórias")
-df["VIT"].mean()
+vitorias = df["VIT"].mean()
+print(vitorias)
 
 #%%
 
 print("Média de empates")
-df["E"].mean()
+empates = df["E"].mean()
+print(empates)
 
 #%%
 
 print("Média de derrotas")
-df["DER"].mean()
+derrotas = df["DER"].mean()
+print(derrotas)
 
 #%%
 
