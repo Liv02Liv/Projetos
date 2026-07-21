@@ -32,3 +32,14 @@ plt.show()
 
 #%%
 
+print("Gols sofridos")
+df.sort_values("GC").plot(
+    x="Equipes",
+    y="GC",
+    kind="bar",
+    figsize=(12,5)
+)
+
+plt.show()
+
+#%%
