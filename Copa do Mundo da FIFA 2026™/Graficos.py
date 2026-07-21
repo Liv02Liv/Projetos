@@ -19,3 +19,16 @@ df.sort_values("Pts", ascending=False).plot(
 plt.show()
 
 #%%
+
+print("Gols marcados")
+df.sort_values("GM", ascending=False).plot(
+    x="Equipes",
+    y="GM",
+    kind="bar",
+    figsize=(12,5)
+)
+
+plt.show()
+
+#%%
+
