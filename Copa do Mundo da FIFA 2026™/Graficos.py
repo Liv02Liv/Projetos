@@ -43,3 +43,12 @@ df.sort_values("GC").plot(
 plt.show()
 
 #%%
+
+print("Dispersão: Pontos × Gols Marcados")
+df.plot.scatter(
+    x="GM",
+    y="Pts",
+    figsize=(7,5)
+)
+
+plt.show()
