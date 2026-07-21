@@ -52,3 +52,16 @@ df.plot.scatter(
 )
 
 plt.show()
+
+#%%
+
+print("Dispersão: Pontos × Saldo de Gols")
+df.plot.scatter(
+    x="SG",
+    y="Pts",
+    figsize=(7,5)
+)
+
+plt.show()
+
+#%%
