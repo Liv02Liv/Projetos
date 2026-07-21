@@ -50,7 +50,7 @@ df.plot.scatter(
     y="Pts",
     figsize=(7,5)
 )
-
+plt.grid(True)
 plt.show()
 
 #%%
@@ -61,7 +61,7 @@ df.plot.scatter(
     y="Pts",
     figsize=(7,5)
 )
-
+plt.grid(True)
 plt.show()
 
 #%%
@@ -75,5 +75,23 @@ plt.imshow(corr, cmap="coolwarm")
 plt.xticks(range(len(corr.columns)), corr.columns, rotation=90)
 plt.yticks(range(len(corr.columns)), corr.columns)
 
+plt.grid(True)
 plt.colorbar()
+plt.show()
+
+#%%
+
+print("Histograma dos gols marcados")
+df["GM"].plot(kind="hist", bins=10)
+
+plt.grid(True)
+plt.xlabel("Gols Marcados")
+plt.show()
+
+#%%
+
+print("Boxplot dos gols sofridos")
+df.boxplot(column="GC")
+
+plt.grid(True)
 plt.show()
