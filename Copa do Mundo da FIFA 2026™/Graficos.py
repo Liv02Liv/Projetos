@@ -65,3 +65,15 @@ df.plot.scatter(
 plt.show()
 
 #%%
+
+print("Heatmap de correlação")
+corr = df.corr(numeric_only=True)
+
+plt.figure(figsize=(8,6))
+plt.imshow(corr, cmap="coolwarm")
+
+plt.xticks(range(len(corr.columns)), corr.columns, rotation=90)
+plt.yticks(range(len(corr.columns)), corr.columns)
+
+plt.colorbar()
+plt.show()
