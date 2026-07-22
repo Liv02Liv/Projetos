@@ -40,12 +40,12 @@ print("2. Ataque e defesa")
 
 #%%
 
-print("Melhor ataque")
+print("Melhor ataque:")
 df.nlargest(10, "GM")[["Equipes", "GM"]].style.hide(axis="index")
 
 #%%
 
-print("Melhor defesa")
+print("Melhor defesa:")
 df.nsmallest(10, "GC")[["Equipes", "GC"]].style.hide(axis="index")
 
 #%%
@@ -56,7 +56,7 @@ df[["GM", "Pts"]].corr().style.hide(axis="index")
 
 #%%
 
-print("Melhor saldo de gols")
+print("Melhor saldo de gols:")
 df.nlargest(10, "SG")[["Equipes", "SG"]].style.hide(axis="index")
 
 #%%
@@ -75,7 +75,16 @@ df["Pts/Jogo"] = df["Pts"] / df["PJ"]
 
 df["SG/Jogo"] = df["SG"] / df["PJ"]
 
-df 
+df_metricas = df[[
+    "Equipes",
+    "Aproveitamento (%)",
+    "GM/Jogo",
+    "GC/Jogo",
+    "Pts/Jogo",
+    "SG/Jogo"
+]].style.hide(axis="index")
+
+df_metricas
 
 #%%
 
@@ -88,12 +97,12 @@ df.sort_values(["VIT", "GM"], ascending=False)[["Equipes", "VIT", "GM"]].style.h
 
 #%%
 
-print("Correlação entre saldo de gols e pontos")
+print("Correlação entre saldo de gols e pontos:")
 df[["SG", "Pts"]].corr().style.hide(axis="index")
 
 #%%
 
-print("Média de gols das 10 melhores equipes")
+print("Média de gols das 10 melhores equipes:")
 top10 = df.nlargest(10, "Pts")
 melhores = top10["GM"].mean()
 print(melhores)
@@ -104,42 +113,42 @@ print("5. Estatísticas gerais")
 
 #%%
 
-print("Total de gols")
+print("Total de gols:")
 gols = df["GM"].sum()
 print(gols)
 
 #%%
 
-print("Média de gols")
+print("Média de gols:")
 Mgols = df["GM"].mean()
 print(Mgols)
 
 #%%
 
-print("Média de pontos")
+print("Média de pontos:")
 pontos = df["Pts"].mean()
 print(pontos)
 #%%
 
-print("Média de vitórias")
+print("Média de vitórias:")
 vitorias = df["VIT"].mean()
 print(vitorias)
 
 #%%
 
-print("Média de empates")
+print("Média de empates:")
 empates = df["E"].mean()
 print(empates)
 
 #%%
 
-print("Média de derrotas")
+print("Média de derrotas:")
 derrotas = df["DER"].mean()
 print(derrotas)
 
 #%%
 
-print("Desvio padrão dos gols marcados")
+print("Desvio padrão dos gols marcados:")
 df["GM"].std()
 
 #%%
@@ -148,20 +157,20 @@ print("6. Rankings")
 
 #%%
 
-print("Top 10 ataques")
+print("Top 10 ataques:")
 df.nlargest(10, "GM")[["Equipes", "GM"]].style.hide(axis="index")
 
 #%%
 
-print("Top 10 defesas")
+print("Top 10 defesas:")
 df.nsmallest(10, "GC")[["Equipes", "GC"]].style.hide(axis="index")
 
 #%%
 
-print("Top 10 saldos")
+print("Top 10 saldos:")
 df.nlargest(10, "SG")[["Equipes", "SG"]].style.hide(axis="index")
 
 #%%
 
-print("Top 10 vitórias")
+print("Top 10 vitórias:")
 df.nlargest(10, "VIT")[["Equipes", "VIT"]].style.hide(axis="index")
