@@ -39,8 +39,7 @@ while True:
         break
     if codigo in df.index:
         carrinho.append(codigo)
-        print("Adicionado:")
+        print(f"Adicionado: {df.loc[codigo, 'Produto']} - R$ {df.loc[codigo, 'Preço']:.2f}")
     else:
         print("Produto não encontrado.")
 
-print(carrinho)
