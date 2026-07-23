@@ -28,7 +28,7 @@ df = pd.DataFrame(dados).set_index("Código")
 print(df)
 
 print("-" * 60)
-print("Digite o código do produto (F para finalizar):")
+print("Digite o código do produto (F para finalizar):\n")
 
 carrinho = []
 
@@ -36,7 +36,7 @@ while True:
     codigo = input("Digite o código do produto (F para finalizar): ")
     
     if codigo.upper() == "F":
-        print("Fim Da Compra!")
+        print("\nFim Da Compra!\n")
         break
     if codigo in df.index:
         carrinho.append(codigo)
@@ -49,4 +49,4 @@ total = 0
 for codigo in carrinho:
     total += df.loc[codigo, "Preço"]
 
-print(f"SubTotal: R$ {total:.2f}")
+print(f"SubTotal: R$ {total:.2f}\n")
