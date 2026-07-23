@@ -45,3 +45,8 @@ while True:
         print("Produto não encontrado.")
 
 total = 0
+
+for codigo in carrinho:
+    total += df.loc[codigo, "Preço"]
+
+print(f"SubTotal: R$ {total:.2f}")
