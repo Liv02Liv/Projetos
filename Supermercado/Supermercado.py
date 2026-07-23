@@ -26,3 +26,21 @@ dados = {
 df = pd.DataFrame(dados).set_index("Código")
 
 print(df)
+
+print("-" * 60)
+
+carrinho = []
+
+while True:
+    codigo = input("Digite o código do produto (F para finalizar): ")
+    
+    if codigo.upper() == "F":
+        print("Fim Da Compra!")
+        break
+    if codigo in df.index:
+        carrinho.append(codigo)
+        print("Adicionado:")
+    else:
+        print("Produto não encontrado.")
+
+print(carrinho)
