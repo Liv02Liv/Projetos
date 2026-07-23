@@ -28,6 +28,7 @@ df = pd.DataFrame(dados).set_index("Código")
 print(df)
 
 print("-" * 60)
+print("Digite o código do produto (F para finalizar):")
 
 carrinho = []
 
@@ -43,3 +44,4 @@ while True:
     else:
         print("Produto não encontrado.")
 
+total = 0
