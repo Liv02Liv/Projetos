@@ -54,4 +54,6 @@ print("=" * 60)
 print("RESUMO DA COMPRA".center(50))
 print("=" * 60)
 
+print(carrinho)
+
 print(f"SubTotal: R$ {total:.2f}\n")
