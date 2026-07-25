@@ -27,6 +27,7 @@ df = pd.DataFrame(dados).set_index("Código")
 
 print(df)
 
+
 print("-" * 60)
 
 carrinho = []
