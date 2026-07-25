@@ -49,4 +49,9 @@ total = 0
 for codigo in carrinho:
     total += df.loc[codigo, "Preço"]
 
+
+print("=" * 60)
+print("RESUMO DA COMPRA".center(50))
+print("=" * 60)
+
 print(f"SubTotal: R$ {total:.2f}\n")
