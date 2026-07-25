@@ -57,3 +57,9 @@ for codigo in carrinho:
 
 print("-" * 50)
 print(f"{'TOTAL':<30} R$ {total:>6.2f}")
+print("=" * 50)
+
+pagar = float(input("Valor pago em dinheiro: "))
+troco = pagar - total
+
+print(f"Troco: {troco}")
