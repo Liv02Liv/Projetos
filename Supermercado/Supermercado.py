@@ -63,3 +63,5 @@ pagar = float(input("Valor pago em dinheiro: "))
 troco = pagar - total
 
 print(f"Troco: {troco}")
+
+print("Obrigado pela preferência! Volte sempre! :)")
